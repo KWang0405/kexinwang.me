@@ -139,7 +139,7 @@ footer a { font-size: .9rem; }
 .supporter-logos { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; }
 .supporter-logos a { display: inline-flex; align-items: center; min-height: 44px; }
 .supporter-logos img { display: block; object-fit: contain; }
-.supporter-logos .lambda-logo { filter: brightness(.14); }
+.timeline #acknowledgements { grid-template-columns: minmax(0, 1fr); row-gap: 1.25rem; }
 .records li { display: grid; grid-template-columns: 7.3rem 1fr; gap: 1rem; padding-block: .8rem; }
 .records li:first-child { padding-top: 0; }
 .records li:last-child { padding-bottom: 0; }
