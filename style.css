@@ -124,10 +124,18 @@ h1 i { color: var(--ink); font-weight: inherit; }
   object-position: center 34%;
   border-radius: .18rem;
 }
-.affiliations { display: flex; align-items: center; gap: 2.5rem; padding-block: .85rem; border-bottom: 1px solid var(--rule); }
+.affiliations { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem clamp(.8rem, 2vw, 2.5rem); padding-block: .85rem; border-bottom: 1px solid var(--rule); }
 .affiliation-label { font: 500 .9rem var(--sans); color: var(--muted); white-space: nowrap; }
 .affiliation-label i { padding-inline: .1rem; color: var(--link); }
 .affiliation-marks { display: flex; align-items: center; gap: clamp(1.5rem, 4vw, 3rem); }
+.affiliation-quote { margin: 0 0 0 auto; text-align: right; color: var(--muted); }
+.affiliation-quote blockquote { margin: 0; }
+.affiliation-quote blockquote p:first-child,
+.affiliation-quote figcaption { font: italic 500 1.2rem/1.35 var(--serif); }
+.affiliation-quote blockquote p:first-child { color: var(--copy); }
+.affiliation-quote [lang="zh-CN"] { font-family: "Songti SC", "Noto Serif CJK SC", SimSun, serif; }
+.affiliation-quote blockquote p + p { margin-top: .2rem; font-size: .86rem; }
+.affiliation-quote figcaption { font-size: .85rem; }
 .affiliation { position: relative; padding: .3rem; border: 0; background: transparent; min-height: 44px; min-width: 44px; display: grid; place-items: center; }
 .affiliation img { max-width: 5.4rem; height: 2.45rem; object-fit: contain; filter: grayscale(1); opacity: .65; transition: filter .18s, opacity .18s; }
 .affiliation.usc img { width: 5.4rem; height: auto; }
@@ -193,7 +201,8 @@ footer a { font-size: .9rem; }
   .masthead { gap: .8rem; }
   .section { grid-template-columns: 1fr; gap: 1.1rem; padding-block: 1.85rem; }
   .hero-inner { gap: 1.3rem; }
-  .affiliations { gap: 1.5rem; }
+  .affiliations { gap: .85rem; }
+  .affiliation-marks { gap: .85rem; }
 }
 @media (max-width: 580px) {
   html { scroll-padding-top: calc(var(--header-height, 7.25rem) + .75rem); }
@@ -212,6 +221,7 @@ footer a { font-size: .9rem; }
   .profile-links a + a::before { margin-inline: .4rem; }
   .affiliations { gap: .4rem; align-items: start; flex-direction: column; padding-block: .85rem; }
   .affiliation-marks { justify-content: space-between; width: 100%; gap: .4rem; }
+  .affiliation-quote { margin-top: .65rem; }
   .affiliation img { height: 2rem; }
   .affiliation.usc img { width: 4.1rem; }
   .affiliation:first-child .affiliation-name { left: 0; transform: none; }
