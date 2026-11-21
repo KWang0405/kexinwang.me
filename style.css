@@ -158,6 +158,7 @@ h1 i { color: var(--ink); font-weight: inherit; }
 .news-list time, .record-date { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; line-height: 1.8; }
 .news-list strong, .authors strong, .records strong { font-weight: 600; color: var(--ink); }
 .news-actions { flex-wrap: wrap; gap: .8rem 1.25rem; margin-top: 1.25rem; font-size: .9rem; }
+.news-actions a { font-size: .88rem; font-weight: 500; }
 #news-toggle, .pdf-link { border: 1px solid #bec1bb; border-radius: .28rem; color: var(--link); background: transparent; padding: .33rem .8rem; }
 #news-toggle:hover, .pdf-link:hover { background: #f4f5f1; }
 .research { display: block; }
