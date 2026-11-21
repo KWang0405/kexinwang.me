@@ -136,6 +136,10 @@ footer a { font-size: .9rem; }
 .timeline-hero > .wrap { padding-block: 2.8rem; }
 .timeline-owner { color: var(--muted); font: italic 500 1.15rem var(--serif); margin-bottom: .65rem; }
 .pdf-link { display: inline-block; text-decoration: none; margin-top: 1.25rem; font-size: .95rem; }
+.supporter-logos { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; }
+.supporter-logos a { display: inline-flex; align-items: center; min-height: 44px; }
+.supporter-logos img { display: block; object-fit: contain; }
+.supporter-logos .lambda-logo { filter: brightness(.14); }
 .records li { display: grid; grid-template-columns: 7.3rem 1fr; gap: 1rem; padding-block: .8rem; }
 .records li:first-child { padding-top: 0; }
 .records li:last-child { padding-bottom: 0; }
