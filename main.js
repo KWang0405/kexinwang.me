@@ -1,3 +1,11 @@
+const header = document.querySelector(".site-header");
+if (header && "ResizeObserver" in window) {
+  const headerObserver = new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--header-height", header.offsetHeight + "px");
+  });
+  headerObserver.observe(header);
+}
+
 const olderNews = document.getElementById("older-news");
 const newsToggle = document.getElementById("news-toggle");
 
