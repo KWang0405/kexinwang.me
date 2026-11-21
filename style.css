@@ -60,6 +60,17 @@ a:hover { color: #1f4877; text-decoration-color: currentColor; }
 :focus-visible { outline: 2px solid var(--link); outline-offset: 4px; border-radius: 2px; }
 [hidden] { display: none !important; }
 button { font: inherit; color: inherit; cursor: pointer; }
+@media (any-pointer: fine) {
+  html { cursor: url("assets/mochi-cursor.png") 5 3, auto; }
+  a[href] { cursor: pointer; }
+}
+@media (any-pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html { animation: mochi-blink 3.2s step-end infinite; }
+  @keyframes mochi-blink {
+    0%, 100% { cursor: url("assets/mochi-cursor.png") 5 3, auto; }
+    95% { cursor: url("assets/mochi-blink.png") 5 3, auto; }
+  }
+}
 h1, h2, h3, p, ul { margin: 0; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); }
 p + p { margin-top: .75rem; }
@@ -78,6 +89,11 @@ nav { flex-wrap: wrap; column-gap: clamp(.8rem, 2vw, 1.7rem); }
 nav a { color: inherit; text-decoration: none; font-size: .9rem; padding-block: .4rem; }
 nav a:hover, nav a[aria-current] { color: #47443f; text-decoration: underline; }
 .hero, .timeline-hero { border-bottom: 1px solid var(--rule); }
+.hero {
+  --corridor-wash: linear-gradient(90deg, #ffffff29, #ffffffc9 23%, #ffffffa6 41%, #ffffff26 61%, transparent);
+  background: var(--corridor-wash),
+              url("assets/traffic-corridor.webp") center 53% / cover no-repeat #fff;
+}
 .hero-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; padding-block: 2.6rem; }
 h1 { font-size: clamp(3.35rem, 6.8vw, 5.5rem); line-height: 1.03; letter-spacing: -.025em; }
 h1 i { color: var(--ink); font-weight: inherit; }
@@ -91,9 +107,23 @@ h1 i { color: var(--ink); font-weight: inherit; }
 .profile-links a { font-weight: 550; font-size: .95rem; text-decoration: none; }
 .profile-links a:hover { text-decoration: underline; }
 .profile-links a + a::before { content: "/"; color: #a6a8a3; margin-inline: .75rem; display: inline-block; font-weight: 400; }
-.portrait-wrap { position: relative; width: clamp(11rem, 19vw, 13.7rem); margin-right: .45rem; isolation: isolate; }
-.portrait-wrap::after { content: ""; position: absolute; z-index: -1; inset: .5rem -.48rem -.48rem .5rem; border: 1px solid #b8bab5; border-radius: .18rem; }
-.portrait { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1.04; object-fit: cover; object-position: center 34%; border-radius: .18rem; }
+.portrait-wrap {
+  --portrait-clearance: clamp(.45rem, 1vw, .85rem);
+  width: clamp(11rem, 19vw, 13.7rem);
+  margin-right: .45rem;
+  border-radius: .18rem;
+  box-shadow: 0 0 0 var(--portrait-clearance) white,
+              0 0 calc(2 * var(--portrait-clearance)) calc(2 * var(--portrait-clearance)) white;
+}
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1.04;
+  object-fit: cover;
+  object-position: center 34%;
+  border-radius: .18rem;
+}
 .affiliations { display: flex; align-items: center; gap: 2.5rem; padding-block: .85rem; border-bottom: 1px solid var(--rule); }
 .affiliation-label { font: 500 .9rem var(--sans); color: var(--muted); white-space: nowrap; }
 .affiliation-label i { padding-inline: .1rem; color: var(--link); }
@@ -171,6 +201,10 @@ footer a { font-size: .9rem; }
   nav { column-gap: .8rem; row-gap: 0; }
   nav a { font-size: .875rem; padding-block: .2rem; }
   .hero-inner { grid-template-columns: 1fr 26%; padding-block: 2rem; gap: .8rem; align-items: start; }
+  .hero {
+    --corridor-wash: linear-gradient(90deg, #ffffffba, #ffffffc7 53%, #ffffff3d 82%, transparent);
+    background-position: center, 46% center;
+  }
   h1 { font-size: clamp(2.48rem, 8.7vw, 3.2rem); }
   .portrait-wrap { width: calc(100% - .4rem); margin: .25rem 0 0; }
   .position { font-size: 1rem; line-height: 1.45; margin-top: .85rem; }
