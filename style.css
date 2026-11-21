@@ -136,7 +136,7 @@ footer a { font-size: .9rem; }
 .timeline-hero > .wrap { padding-block: 2.8rem; }
 .timeline-owner { color: var(--muted); font: italic 500 1.15rem var(--serif); margin-bottom: .65rem; }
 .pdf-link { display: inline-block; text-decoration: none; margin-top: 1.25rem; font-size: .95rem; }
-.supporter-logos { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; }
+.supporter-logos { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; padding-inline-start: clamp(1rem, 3vw, 2rem); }
 .supporter-logos a { display: inline-flex; align-items: center; min-height: 44px; }
 .supporter-logos img { display: block; object-fit: contain; }
 .timeline #acknowledgements { grid-template-columns: minmax(0, 1fr); row-gap: 1.25rem; }
